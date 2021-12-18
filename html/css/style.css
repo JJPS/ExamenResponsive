@@ -1,2 +1,101 @@
 /* Para poner sombra*/
 /*  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    max-width: 1200px;
+    padding: 1.5em;
+    margin: auto;
+
+    gap: 2em;
+}
+
+article {
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: .8em 0 .8em 0;
+}
+
+.pcTablet,
+.movil {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center center;
+    padding: 1em;
+}
+
+.movil {
+    min-height: 14.5em;
+}
+
+.pcTablet {
+    min-height: 18em;
+}
+
+button,
+.movil {
+    color: white;
+}
+
+button {
+    background-color: #5c5c5c;
+    padding: .5em;
+    border: 0;
+}
+
+@media only screen and (min-width: 100px) and (max-width: 475px) {
+
+    /*Small smartphones [325px -> 425px]*/
+    body {
+        font-size: 14px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+    .pcTablet {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 475px) and (max-width: 1200px) {
+
+    /*Big smartphones [426px -> 600px]*/
+    body {
+        font-size: 15px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movil__texto {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    /*Tablets [601px -> 1200px]*/
+    body {
+        font-size: 16px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .movil__texto {
+        display: none;
+    }
+
+}
